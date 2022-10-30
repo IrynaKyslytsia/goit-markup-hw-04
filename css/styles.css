@@ -8,6 +8,7 @@
     --bgc1: #F5F5F5;
     --bgc2: #F5F4FA;
     --bgc3: #2F303A;
+    --icons-color: #AFB1B8;
 }
 
 body{
@@ -31,8 +32,13 @@ a{
 
 img{
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
+}
+
+h4{
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* header */
@@ -73,14 +79,6 @@ img{
     margin-left: 93px;
 }
 
-/* .site-nav .item{
-    margin-right: 50px;
-}
-
-.site-nav .item:last-child{
-    margin-right: 0;
-} */
-
 .site-nav .item:not(:last-child){
     margin-right: 50px;
 }
@@ -109,6 +107,7 @@ img{
 
 .contacts{
     display: flex;
+    align-items: center;
     margin-top: 0;
     margin-bottom: 0;
     margin-left: auto;
@@ -123,16 +122,28 @@ img{
     padding-top: 32px;
     padding-bottom: 32px;
      
-    color: var(--title-text-color);
+    color: var(--primary-text-color);
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
 }
 
+/* .contact-icon:hover,
+.contact-icon:focus{
+    fill: var(--accent-color);
+} */
+
 .contact-link:hover,
 .contact-link:focus{
     color: var(--accent-color);
 }
+
+.contact-icon{
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+/* main */
 
 .container{
     margin-left: auto;
@@ -145,11 +156,23 @@ img{
 /* hero */
 
 .hero{
-    padding-top: 200px;
-    padding-bottom: 200px;
+    width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 200px 452px;
     text-align: center;
 
-    background-color: var(--bgc3);        
+    background-color: #C4C4C4; 
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;       
 }
 
 .hero-title{
@@ -183,6 +206,17 @@ img{
 }
 
 /* features */
+
+.design-icon{
+    display: block;
+    width: 270px;
+    height: 120px;
+    padding: 25px 100px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    
+    background-color: var(--bgc2);    
+}
 
 .features{
     display: flex;
@@ -248,7 +282,7 @@ img{
     justify-content: space-between;
 }
 .team .item{
-    background-color: #fff;
+    background-color: var(--white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
     width: 270px;
@@ -268,6 +302,58 @@ img{
 
     font-size: 16px;
     line-height: 1.19;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 16px;
+    margin-bottom: 30px;
+}
+
+.social-link{
+    display: block;
+    padding: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--icons-color);
+}
+
+.icon{
+    fill: currentColor;
+}
+
+.social-link:hover,
+.social-link:focus{    
+    background-color: var(--accent-color);
+    color: var(--white)
+}
+
+/* clients */
+
+.clients{
+    display: flex;
+    justify-content: space-between;
+}
+
+.client-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icons-color);
+    border-radius: 4px;
+    fill: var(--icons-color);
+}
+
+.client-link:hover,
+.client-link:focus{
+    fill: var(--accent-color);
+    border: 1px solid var(--accent-color);
 }
 
 /* portfolio */
@@ -301,6 +387,10 @@ img{
 
 .project-list .item:nth-child(n+7){
     margin-bottom: 0;
+}
+
+.project-list .item:hover{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-title{
@@ -385,19 +475,24 @@ img{
 
 /* footer */
 
-.footer{
+.page-footer{
     background-color: var(--bgc3);
 
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
-.footer .link{
+.page-footer .link{
     margin-bottom: 9px;
     color: var(--white);
     font-style: normal;
     font-weight: 400;
     line-height: 1.71;
+}
+
+.footer{
+    display: flex;
+    align-items: baseline;
 }
 
 .address{
@@ -407,4 +502,29 @@ img{
 address .link:hover,
 address .link:focus{
     color: var(--accent-color);
+}
+
+.title{
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1.14;
+}
+
+.icon-list{
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer-icons{
+    margin-left: 70px;
+}
+
+.footer .social-link{
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color:var(--white);
+}
+.footer .social-link:hover,
+.footer .social-link:focus{
+    background-color: var(--accent-color);
 }
